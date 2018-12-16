@@ -1,3 +1,3 @@
-export const article = article =>({
+export const addArticle = article =>({
     type: "ADD_ART", payload: article
 });
