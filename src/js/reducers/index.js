@@ -8,8 +8,7 @@ const initialState = {
 const rootReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_ARTICLE:
-            state.articles.push(action.payload);
-            return state;
+            return { ...state, articles: [ ...state.articles, action.payload] };
             
     
         default:
