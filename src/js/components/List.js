@@ -9,14 +9,14 @@ const mapStateToProps = state => {
 
 const ConnectedList = ({ products }) => (
     <ul className="list-group list-group-flush">
-        {products.map(el => (
+        {/* {products.map(el => (
             <li className="list-group-item" key={el.id}>
                <span> { el.pname } </span>
                <span> { el.pprice } </span>
                <span> { el.pcategory } </span>
                <span> { el.pcolor } </span>
             </li>
-        ))}
+        ))} */}
     </ul>
 );
 
