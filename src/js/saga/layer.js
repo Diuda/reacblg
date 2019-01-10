@@ -12,8 +12,8 @@ export function* layerFetchList(action) {
 }
 
 
-export function* layerEdit(action) {
+export function* layerAdd(action) {
     yield call(APILayer.edit, action.layer);
-    yield put({type: 'LAYER_SAVE', layer: action.layer});
+    yield put({type: 'LAYER_ADD', layer: action.layer});
     action.callbackSuccess();
 }
