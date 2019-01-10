@@ -1,14 +1,14 @@
-import { ADD_ARTICLE } from "../constants/action-type";
+import { ADD_PRODUCT } from "../constants/action-type";
 
 const initialState = {
-    articles: []
+    products: []
 };
 
 
 const rootReducer = (state = initialState, action) => {
     switch (action.type) {
-        case ADD_ARTICLE:
-            return { ...state, articles: [ ...state.articles, action.payload] };
+        case ADD_PRODUCT:
+            return { ...state, products: [ ...state.products, action.payload] };
             
     
         default:
