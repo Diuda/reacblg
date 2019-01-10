@@ -1,19 +1,16 @@
-import { ADD_PRODUCT } from "../constants/action-type";
+import { combine, combineReducers } from "redux";
+import { routerReducer } from "react-router-redux";
+import { reducer as formReducer } from "redux-form";
+import { i18nReducer } from "react-redux-i18n";
 
-const initialState = {
-    products: []
-};
+
+import product from './product';
+import layer from './layer';
 
 
-const rootReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case ADD_PRODUCT:
-            return { ...state, products: [ ...state.products, action.payload] };
-            
-    
-        default:
-            return state;
-    }
-};
-
-export default rootReducer;
+export const reducers = combineReducers({
+    routing: routerReducer,
+    form: formReducer,
+    product,
+    layer
+})
