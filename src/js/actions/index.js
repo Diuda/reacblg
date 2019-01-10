@@ -1,3 +1,3 @@
-export const addArticle = article =>({
-    type: "ADD_ART", payload: article
+export const addProduct = product =>({
+    type: "ADD_PROD", payload: product
 });
