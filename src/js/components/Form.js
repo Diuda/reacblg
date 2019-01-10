@@ -16,7 +16,11 @@ class ConnectedForm extends Component {
         super();
 
         this.state = {
-            title: ""
+            pname: "",
+            pid: "",
+            pcategory: "",
+            pprice: "",
+            pcolor: ""
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -32,20 +36,41 @@ class ConnectedForm extends Component {
         const { title } = this.state;
         const id = uuidv1();
         this.props.addArticle({title, id});
-        this.setState({title: ""});
+        this.setState({
+            pname: "",
+            pid: "",
+            pcategory: "",
+            pprice: "",
+            pcolor: ""
+        });
     }
 
 
     render() {
-        const { title } = this.state;
+        const { pname, pid, pcategory, pprice, pcolor } = this.state;
         return (
             <form onSubmit={this.handleSubmit}>
                 <div className="form-group">
                     <label htmlFor="title">
-                    Title
+                    Product Name
                     </label>
-                    <input type="text" className="form-control" id="title" value={title} onChange={this.handleChange}/>
-                    
+                    <input type="text" className="form-control" id="pname" value={pname} onChange={this.handleChange}/>
+                    <label htmlFor="title">
+                    Product Id
+                    </label>
+                    <input type="text" className="form-control" id="pid" value={pid} onChange={this.handleChange}/>
+                    <label htmlFor="title">
+                    Category
+                    </label>
+                    <input type="text" className="form-control" id="pcategory" value={pcategory} onChange={this.handleChange}/>
+                    <label htmlFor="title">
+                    Price
+                    </label>
+                    <input type="text" className="form-control" id="pprice" value={pprice} onChange={this.handleChange}/>
+                    <label htmlFor="title">
+                    Color
+                    </label>
+                    <input type="text" className="form-control" id="pcolor" value={pcolor} onChange={this.handleChange}/>
                 </div>
                 <button type="submit" className="btn btn-success btn-lg">
                     Save
