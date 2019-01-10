@@ -13,7 +13,8 @@ export function* layerFetchList(action) {
 
 
 export function* layerAdd(action) {
-    yield call(APILayer.edit, action.layer);
-    yield put({type: 'LAYER_ADD', layer: action.layer});
+    
+    yield call(APILayer.add, action.payload);
+    yield put({type: 'LAYER_ADD', layer: action.payload});
     action.callbackSuccess();
 }
