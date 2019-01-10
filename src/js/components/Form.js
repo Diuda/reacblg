@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import uuidv1 from "uuid";
-import { addProduct } from "../actions/index";
+import { addProduct, addProductAPI } from "../actions/index";
 
 
 const mapDispatchToProps = dispatch => {
     return {
-        addProduct: product=>dispatch(addProduct(product))
+        // addProduct: product=>dispatch(addProduct(product)),
+        addProductAPI: product=>dispatch(addProductAPI(product))
     };
 };
 
@@ -35,7 +36,7 @@ class ConnectedForm extends Component {
         event.preventDefault();
         const { pname, pid, pcategory, pprice, pcolor } = this.state;
         const id = uuidv1();
-        this.props.addProduct({id, pname, pid, pcategory, pprice, pcolor });
+        this.props.addProductAPI({id, pname, pid, pcategory, pprice, pcolor });
         this.setState({
             pname: "",
             pid: "",
