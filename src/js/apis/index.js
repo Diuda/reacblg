@@ -1,7 +1,7 @@
 
-import { axios } from 'axios';
+import  axios  from "axios";
 
-const root = "localhost:4200/api/products";
+const root = "http://localhost:4200/api/products";
 
 export default class APILayer {
     static getAll() {
@@ -14,10 +14,11 @@ export default class APILayer {
 
     static add(payload) {
         return axios.post(root, payload);
+      //   return axios;
     }
 
     static edit(payload) {
-        return axios.put(`${root}/payload.pid`, payload);
+        return axios.put(`${root}/${payload.pid}`, payload);
     }
 
     static delete(payload) {
